@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11100e">
+<meta name="description" content="Khana In Kilo — North Indian favourites, freshly prepared for takeaway and home delivery in Raj Nagar Extension, Ghaziabad.">
+<title>Khana In Kilo | Good Food. Good Mood.</title>
+<style>
+:root{
+ --ink:#11100e;--ink2:#1b1713;--ink3:#292018;--ivory:#f7f0e5;--cream:#eee2d1;
+ --orange:#ed762d;--orange2:#f28b43;--muted:#c9bcae;--line:#594638;--green:#8c9b58;
+ --serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--ink);color:var(--ivory);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.announcement{padding:9px 14px;text-align:center;background:#241b14;color:#ead8c4;font-size:9px;line-height:1.5;letter-spacing:.16em;font-weight:800}
+.site-header{height:78px;padding:0 18px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid #ffffff20;background:#11100ef5;position:relative;z-index:20}
+.header-left{justify-self:start}.header-right{justify-self:end;display:flex;gap:9px;align-items:center}
+.icon-button{width:40px;height:40px;border:1px solid #ffffff40;border-radius:50%;background:transparent;color:var(--ivory);display:grid;place-items:center}
+.icon-button svg{width:19px;height:19px}
+.brand{grid-column:2;display:flex;align-items:center;gap:9px;white-space:nowrap}
+.brand-mark{width:42px;height:42px;border:1.5px solid var(--orange);border-radius:50%;display:grid;place-items:center;position:relative;font-size:12px;font-weight:950;letter-spacing:-1px}
+.brand-mark:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:var(--orange);bottom:8px;left:19px}
+.brand-name{font-size:15px;font-weight:950;letter-spacing:-.055em;line-height:1.05}
+.brand-name small{display:block;margin-top:5px;color:var(--orange);font-size:7px;letter-spacing:.17em}
+.bag-button{height:40px;border:0;border-radius:24px;background:var(--orange);color:#1c120b;padding:0 13px;font-size:11px;font-weight:900}
+.bag-count{display:inline-grid;place-items:center;min-width:19px;height:19px;margin-left:4px;padding:0 5px;border-radius:50%;background:#24170f;color:#fff}
+.hero{position:relative;overflow:hidden;padding:42px 20px 32px;background:radial-gradient(ellipse at 50% 62%,#2d2016 0%,#1b1611 39%,#11100e 78%)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #e9783524;border-radius:50%;pointer-events:none}
+.hero:before{width:420px;height:420px;right:-300px;top:230px;box-shadow:0 0 0 35px #e9783508,0 0 0 75px #e9783505}
+.hero:after{width:330px;height:330px;left:-275px;top:100px;box-shadow:0 0 0 28px #e9783507}
+.hero-inner{max-width:1160px;margin:auto;position:relative;z-index:1}
+.hero-copy{text-align:center;max-width:820px;margin:0 auto}
+.eyebrow{display:flex;justify-content:center;align-items:center;gap:11px;color:#f0a16e;font-size:9px;font-weight:850;letter-spacing:.24em;text-transform:uppercase}
+.eyebrow:before,.eyebrow:after{content:"";width:24px;height:1px;background:var(--orange)}
+h1{font:500 clamp(48px,11vw,90px)/.96 var(--serif);letter-spacing:-.065em;margin:19px 0 15px}
+h1 em{font-style:italic;color:var(--orange)}
+.hero-subtitle{max-width:550px;margin:0 auto;color:#d4c8bb;font-size:14px;line-height:1.75}
+.botanical-stage{position:relative;max-width:940px;height:300px;margin:17px auto 7px}
+.botanical-stage svg{display:block;width:100%;height:100%;overflow:visible}
+.stage-caption{position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#e6d4bf;font:italic 12px var(--serif);letter-spacing:.13em}
+.hero-points{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 22px;margin:13px 0 22px;color:#d8c9b8;font-size:10px;letter-spacing:.02em}
+.hero-points span{display:flex;align-items:center;gap:7px}.hero-points b{color:var(--orange);font-size:13px}
+.hero-actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap}
+.cta{min-height:50px;min-width:190px;padding:0 24px;border-radius:30px;display:inline-flex;justify-content:center;align-items:center;gap:12px;font-size:12px;font-weight:900;letter-spacing:.02em;transition:transform .18s,background .18s}
+.cta:active{transform:scale(.98)}
+.cta-primary{background:var(--orange);border:1px solid var(--orange);color:#1b120b}
+.cta-primary:hover{background:var(--orange2)}
+.cta-secondary{background:transparent;border:1px solid #e8d9c7;color:var(--ivory)}
+.order-panel{position:relative;z-index:2;max-width:960px;margin:0 auto 38px;padding:22px 19px 19px;border-radius:13px;background:var(--ivory);color:#211b16;box-shadow:0 18px 45px #0005}
+.order-label{font-size:10px;font-weight:900;letter-spacing:.2em;color:#a15d38}
+.order-title{font:500 clamp(25px,5vw,38px)/1.1 var(--serif);letter-spacing:-.04em;margin:9px 0 17px}
+.order-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mode-button{min-height:78px;border:1px solid #d8c9b7;border-radius:8px;background:#fffaf2;color:#211b16;padding:12px 10px;text-align:left;display:flex;align-items:center;gap:12px}
+.mode-button .mode-icon{width:35px;height:35px;display:grid;place-items:center;color:#33271e;flex:none}
+.mode-button .mode-icon svg{width:29px;height:29px}
+.mode-button strong{display:block;font-size:13px}.mode-button small{display:block;margin-top:5px;font-size:10px;color:#71675d}
+.mode-button.active{background:#211c17;border-color:#211c17;color:#fff1e4}
+.mode-button.active small{color:#d3c5b5}.mode-button.active .mode-icon{color:var(--orange)}
+.pin-row{display:flex;gap:9px;margin-top:12px}
+.pin-row input{height:48px;min-width:0;flex:1;border:1px solid #d6c8b8;border-radius:7px;background:#fffaf2;color:#211b16;padding:0 13px;font-size:12px;outline:none}
+.pin-row input:focus{border-color:#b96b3b;box-shadow:0 0 0 3px #ed762d20}
+.pin-row button{height:48px;border:0;border-radius:7px;background:var(--orange);color:#1b120b;padding:0 21px;font-size:12px;font-weight:900}
+.pin-hint{margin:8px 1px 0;color:#81766b;font-size:10px;line-height:1.5}
+.menu-preview{background:var(--ivory);color:#211b16;padding:43px 21px 48px}
+.menu-inner{max-width:1160px;margin:auto}
+.menu-preview .eyebrow{justify-content:flex-start;color:#a15d38}
+.menu-preview .eyebrow:before{display:none}.menu-preview .eyebrow:after{width:24px}
+.menu-preview h2{font:500 clamp(32px,6vw,48px)/1.08 var(--serif);letter-spacing:-.045em;margin:13px 0 10px}
+.menu-preview p{max-width:560px;color:#70665b;font-size:13px;line-height:1.75;margin:0}
+.portion-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.portion-chips span{padding:9px 13px;border:1px solid #d8cbbb;border-radius:30px;font-size:10px;font-weight:800}
+.site-footer{padding:22px 18px;text-align:center;background:#11100e;color:#b7a99a;font-size:9px;letter-spacing:.13em}
+.site-footer strong{color:var(--ivory)}
+/* Drawer and dialogs */
+.overlay{position:fixed;inset:0;z-index:50;background:#000a;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.overlay.open{opacity:1;visibility:visible}
+.drawer{position:absolute;top:0;bottom:0;left:0;width:min(84vw,360px);padding:25px 22px;background:var(--ivory);color:#211b16;transform:translateX(-102%);transition:transform .25s;display:flex;flex-direction:column}
+.overlay.open .drawer{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid #d8cbbb}
+.drawer-brand{font-weight:950;letter-spacing:-.05em}.drawer-brand small{display:block;color:#b45d2d;font-size:9px;letter-spacing:.15em;margin-top:5px}
+.drawer-close,.modal-close{border:0;background:transparent;color:inherit;font-size:27px;line-height:1}
+.drawer nav{display:grid;gap:0;margin-top:15px}
+.drawer nav a{padding:17px 2px;border-bottom:1px solid #dfd4c6;font:500 22px var(--serif)}
+.drawer-note{margin-top:auto;color:#786d61;font-size:11px;line-height:1.7}
+.dialog{position:fixed;inset:0;z-index:60;background:#000b;display:flex;align-items:flex-end;justify-content:center;padding:12px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.dialog.open{opacity:1;visibility:visible}
+.dialog-card{width:100%;max-width:520px;max-height:82vh;overflow:auto;background:var(--ivory);color:#211b16;border-radius:15px;padding:22px 19px 20px;transform:translateY(18px);transition:transform .2s}
+.dialog.open .dialog-card{transform:translateY(0)}
+.dialog-head{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.dialog h3{font:500 27px var(--serif);margin:0}
+.dialog p{font-size:12px;line-height:1.7;color:#71675d}
+.search-field{width:100%;height:48px;border:1px solid #d4c6b5;border-radius:7px;background:#fffaf2;padding:0 13px;color:#211b16;outline:none}
+.dialog-action{display:flex;justify-content:center;align-items:center;min-height:46px;margin-top:13px;padding:0 15px;border-radius:7px;background:var(--orange);color:#1b120b;font-size:12px;font-weight:900}
+.toast{position:fixed;z-index:90;left:50%;bottom:22px;transform:translate(-50%,16px);opacity:0;pointer-events:none;width:max-content;max-width:calc(100% - 30px);padding:12px 16px;border-radius:8px;background:var(--ivory);color:#211b16;font-size:11px;line-height:1.45;font-weight:750;text-align:center;box-shadow:0 9px 28px #0008;transition:.22s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:760px){
+ .site-header{padding:0 max(30px,calc((100vw - 1160px)/2))}
+ .hero{padding:55px 32px 42px}
+ .botanical-stage{height:365px;margin-top:13px}
+ .order-panel{padding:25px 27px 22px}
+ .menu-preview{padding:58px 32px 64px}
+ .dialog{align-items:center}
+}
+@media(max-width:390px){
+ .site-header{height:70px;padding:0 12px}
+ .brand-mark{width:36px;height:36px;font-size:10px}
+ .brand-mark:after{left:16px;bottom:7px}
+ .brand-name{font-size:13px}.brand-name small{font-size:6px}
+ .icon-button{width:36px;height:36px}.bag-button{height:36px;padding:0 10px}
+ .hero{padding:34px 16px 26px}
+ h1{font-size:clamp(44px,12vw,56px)}
+ .hero-subtitle{font-size:13px}
+ .botanical-stage{height:245px;margin-top:15px}
+ .hero-points{gap:8px 12px;font-size:9px}
+ .cta{width:100%;min-height:49px}
+ .order-panel{margin-left:12px;margin-right:12px;padding:17px 13px 15px}
+ .order-modes{gap:7px}
+ .mode-button{gap:7px;padding:10px 7px;min-height:72px}
+ .mode-button .mode-icon{width:26px}.mode-button .mode-icon svg{width:24px}
+ .mode-button strong{font-size:11px}.mode-button small{font-size:9px}
+ .pin-row button{padding:0 15px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="announcement">FRESHLY PREPARED&nbsp; • &nbsp;TAKEAWAY & HOME DELIVERY&nbsp; • &nbsp;RAJ NAGAR EXTENSION</div>
+<header class="site-header">
+ <div class="header-left"><button class="icon-button" aria-label="Open navigation menu" id="menuOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+ <a class="brand" href="#top" aria-label="Khana In Kilo home"><span class="brand-mark">KIK</span><span class="brand-name">KHANA IN KILO<small>GOOD FOOD. GOOD MOOD.</small></span></a>
+ <div class="header-right">
+  <button class="icon-button" aria-label="Search menu" id="searchOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+  <button class="bag-button" id="bagOpen" aria-label="Open shopping bag">Bag <span class="bag-count" id="bagCount">0</span></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="hero-inner">
+  <div class="hero-copy">
+   <div class="eyebrow">The art of Indian flavour</div>
+   <h1>A Little Spice.<br><em>A Lot of Love.</em></h1>
+   <p class="hero-subtitle">North Indian comfort, thoughtfully prepared and packed with care. Bring home the flavours you love, in portions made to fit your table.</p>
+  </div>
+
+  <div class="botanical-stage" aria-label="Botanical illustration of Indian spices">
+   <svg viewBox="0 0 940 350" role="img" aria-labelledby="spiceTitle spiceDesc">
+    <title id="spiceTitle">Botanical Indian spice illustration</title><desc id="spiceDesc">Fine engraved illustrations of chilli, cinnamon, cardamom, star anise, coriander and spice bowls.</desc>
+    <defs>
+     <linearGradient id="spiceGlow" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#4a2c1b"/><stop offset="1" stop-color="#17110d"/></linearGradient>
+     <linearGradient id="bowlFill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#4a3020"/><stop offset="1" stop-color="#211711"/></linearGradient>
+     <filter id="softShadow"><feGaussianBlur stdDeviation="9"/></filter>
+    </defs>
+    <ellipse cx="470" cy="290" rx="285" ry="27" fill="#000" opacity=".45" filter="url(#softShadow)"/>
+    <!-- left botanical branch -->
+    <g fill="none" stroke="#c97936" stroke-width="1.6" opacity=".92" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M34 278Q83 210 135 148Q170 108 205 45"/>
+     <path d="M113 174Q53 172 30 124Q84 117 113 174Z"/><path d="M113 174Q70 146 42 130"/>
+     <path d="M144 137Q104 104 113 57Q160 79 144 137Z"/><path d="M144 137Q131 94 119 68"/>
+     <path d="M167 103Q159 53 196 23Q220 70 167 103Z"/><path d="M167 103Q185 57 198 32"/>
+     <path d="M78 220Q25 225 8 188Q59 174 78 220Z"/><path d="M78 220Q42 197 17 194"/>
+    </g>
+    <!-- right botanical branch -->
+    <g fill="none" stroke="#c97936" stroke-width="1.6" opacity=".92" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M906 278Q857 210 805 148Q770 108 735 45"/>
+     <path d="M827 174Q887 172 910 124Q856 117 827 174Z"/><path d="M827 174Q870 146 898 130"/>
+     <path d="M796 137Q836 104 827 57Q780 79 796 137Z"/><path d="M796 137Q809 94 821 68"/>
+     <path d="M773 103Q781 53 744 23Q720 70 773 103Z"/><path d="M773 103Q755 57 742 32"/>
+     <path d="M862 220Q915 225 932 188Q881 174 862 220Z"/><path d="M862 220Q898 197 923 194"/>
+    </g>
+    <!-- central spice bowls -->
+    <g stroke="#d99a5a" stroke-width="2">
+     <path d="M215 216Q270 181 326 216L315 272Q270 299 226 272Z" fill="url(#bowlFill)"/>
+     <ellipse cx="270" cy="216" rx="55" ry="17" fill="#9a5a2b"/>
+     <path d="M225 216Q270 230 315 216" fill="none" stroke="#f0c08b" stroke-width="1.2"/>
+     <path d="M378 201Q470 157 562 201L544 281Q470 314 396 281Z" fill="url(#bowlFill)"/>
+     <ellipse cx="470" cy="201" rx="92" ry="26" fill="#a84e25"/>
+     <path d="M383 201Q470 225 557 201" fill="none" stroke="#f2c28c" stroke-width="1.4"/>
+     <path d="M620 216Q675 181 730 216L719 272Q675 299 631 272Z" fill="url(#bowlFill)"/>
+     <ellipse cx="675" cy="216" rx="55" ry="17" fill="#96713b"/>
+     <path d="M630 216Q675 230 720 216" fill="none" stroke="#f0c08b" stroke-width="1.2"/>
+    </g>
+    <!-- spice textures -->
+    <g fill="none" stroke="#f1c58e" stroke-width="1.3" opacity=".95">
+     <path d="M239 210q10-18 20 0q10-18 20 0q10-18 20 0"/>
+     <path d="M407 198q10-18 20 0q10-18 20 0q10-18 20 0q10-18 20 0q10-18 20 0"/>
+     <path d="M644 211l9-11 9 11 9-11 9 11 9-11 9 11"/>
+    </g>
+    <!-- cinnamon sticks -->
+    <g transform="translate(670 280) rotate(-17)" stroke="#d78b4a" stroke-width="2">
+     <path d="M0 0h185q10 0 10 8t-10 8H0q-10 0-10-8t10-8Z" fill="#8e4b25"/>
+     <path d="M14 23h169q10 0 10 8t-10 8H14q-10 0-10-8t10-8Z" fill="#6f391f"/>
+     <path d="M0 0q18 8 0 16M14 23q18 8 0 16" fill="none" stroke="#f0bb83"/>
+     <path d="M32 3h125M38 26h118" stroke="#e9ae75" opacity=".6"/>
+    </g>
+    <!-- chilli -->
+    <g transform="translate(70 245) rotate(18)" fill="#9d3824" stroke="#e58c50" stroke-width="2">
+     <path d="M0 5Q30-18 69 1Q100 17 146 4Q124 50 77 49Q30 49 0 5Z"/>
+     <path d="M2 5q-11-11-17-6" fill="none" stroke="#7b914a" stroke-width="5"/>
+     <path d="M20 9q48 27 104 8" fill="none" stroke="#f2b17b" stroke-width="1.2"/>
+    </g>
+    <!-- star anise -->
+    <g transform="translate(320 275)" fill="#8c4d25" stroke="#e4a45f" stroke-width="2">
+     <path d="M0-33Q9-17 30-22Q17-5 31 13Q10 9 0 31Q-10 9-31 13Q-17-5-30-22Q-9-17 0-33Z"/>
+     <circle r="7" fill="#d18a43"/>
+    </g>
+    <!-- cardamom -->
+    <g fill="#6f7d43" stroke="#c2b06c" stroke-width="1.5">
+     <ellipse cx="554" cy="301" rx="20" ry="8" transform="rotate(-20 554 301)"/>
+     <ellipse cx="586" cy="309" rx="18" ry="7" transform="rotate(14 586 309)"/>
+     <path d="M536 301l34-8M570 309l28-2" fill="none"/>
+    </g>
+    <!-- peppercorns and seed details -->
+    <g fill="#d9a35f"><circle cx="180" cy="302" r="3"/><circle cx="195" cy="315" r="2"/><circle cx="365" cy="306" r="2.5"/><circle cx="618" cy="315" r="3"/><circle cx="750" cy="302" r="2.5"/><circle cx="775" cy="291" r="2"/><circle cx="148" cy="290" r="2"/></g>
+    <!-- coriander sprig -->
+    <g fill="none" stroke="#87975a" stroke-width="2" stroke-linecap="round">
+     <path d="M590 184q25-27 46-47m-30 31q-27-18-29-39 24 4 29 39Zm20-19q1-27 24-39 8 23-24 39Zm-7 12q26-8 43 8-21 15-43-8Z"/>
+    </g>
+   </svg>
+   <div class="stage-caption">The warmth of spices. The comfort of home.</div>
+  </div>
+
+  <div class="hero-points"><span><b>✦</b> 250 g · 500 g · 1 kg</span><span><b>✦</b> Freshly prepared</span><span><b>✦</b> Takeaway & delivery</span></div>
+  <div class="hero-actions">
+   <a class="cta cta-primary" href="#menu-preview">Explore the menu <span>↗</span></a>
+   <button class="cta cta-secondary" id="howOpen">How to order <span>▷</span></button>
+  </div>
+ </div>
+</section>
+
+<section class="order-panel" aria-labelledby="orderTitle">
+ <div class="order-label">ORDER YOUR WAY</div>
+ <h2 class="order-title" id="orderTitle">How would you like to enjoy KIK?</h2>
+ <div class="order-modes">
+  <button class="mode-button active" id="deliveryMode" type="button" aria-pressed="true">
+   <span class="mode-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="23" r="4"/><circle cx="24" cy="23" r="4"/><path d="M4 22h-2v-7h13l4 7h-7M15 15l-2-6h7l5 6M20 9l2-3h4M24 15h5l2 5h-3"/></svg></span>
+   <span><strong>Home Delivery</strong><small>Delivered to your door</small></span>
+  </button>
+  <button class="mode-button" id="takeawayMode" type="button" aria-pressed="false">
+   <span class="mode-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h20l-1.5 17h-17L6 11Z"/><path d="M11 12V8a5 5 0 0 1 10 0v4"/></svg></span>
+   <span><strong>Takeaway</strong><small>Collect from our outlet</small></span>
+  </button>
+ </div>
+ <div class="pin-row" id="pinRow"><input id="pinInput" inputmode="numeric" autocomplete="postal-code" maxlength="6" placeholder="Enter 6-digit delivery PIN code" aria-label="Delivery PIN code"><button type="button" id="pinCheck">Check</button></div>
+ <p class="pin-hint" id="pinHint">Enter your PIN code to check delivery availability. Coverage will be connected to the live service before launch.</p>
+</section>
+
+<section class="menu-preview" id="menu-preview">
+ <div class="menu-inner">
+  <div class="eyebrow">A taste of KIK</div>
+  <h2>Good food, your way.</h2>
+  <p>North Indian favourites in portions that suit a quick meal, a family dinner or an office table. Choose 250 g, 500 g or 1 kg portions.</p>
+  <div class="portion-chips"><span>250 g portions</span><span>500 g portions</span><span>1 kg portions</span></div>
+  <div class="demo-menu" style="margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+   <article class="demo-dish" data-name="Rajma" style="padding:16px;border:1px solid #d8cbbb;border-radius:10px;background:#fffaf2">
+    <div style="font:italic 22px Georgia;color:#a15d38">01 / Comfort classic</div><h3 style="margin:8px 0;font:500 25px Georgia">Rajma</h3><p style="font-size:12px;color:#70665b">Slow-cooked kidney beans in a homestyle North Indian gravy.</p>
+    <label style="font-size:11px;font-weight:800">PORTION</label><select class="portion-select" aria-label="Rajma portion" style="display:block;width:100%;margin:7px 0 12px;padding:11px;border:1px solid #d8cbbb;border-radius:7px;background:#fffaf2;color:#211b16"><option value="250">250 g · ₹95</option><option value="500">500 g · ₹170</option><option value="1000">1 kg · ₹320</option></select>
+    <button class="add-demo" data-dish="Rajma" style="width:100%;padding:12px;border:0;border-radius:7px;background:#ed762d;font-weight:900;color:#21160e">Add to bag</button>
+   </article>
+   <article class="demo-dish" data-name="Chole" style="padding:16px;border:1px solid #d8cbbb;border-radius:10px;background:#fffaf2">
+    <div style="font:italic 22px Georgia;color:#a15d38">02 / Punjabi favourite</div><h3 style="margin:8px 0;font:500 25px Georgia">Chole</h3><p style="font-size:12px;color:#70665b">A hearty chickpea curry with a familiar, comforting spice blend.</p>
+    <label style="font-size:11px;font-weight:800">PORTION</label><select class="portion-select" aria-label="Chole portion" style="display:block;width:100%;margin:7px 0 12px;padding:11px;border:1px solid #d8cbbb;border-radius:7px;background:#fffaf2;color:#211b16"><option value="250">250 g · ₹95</option><option value="500">500 g · ₹170</option><option value="1000">1 kg · ₹320</option></select>
+    <button class="add-demo" data-dish="Chole" style="width:100%;padding:12px;border:0;border-radius:7px;background:#ed762d;font-weight:900;color:#21160e">Add to bag</button>
+   </article>
+   <article class="demo-dish" data-name="Dal Tadka" style="padding:16px;border:1px solid #d8cbbb;border-radius:10px;background:#fffaf2">
+    <div style="font:italic 22px Georgia;color:#a15d38">03 / Everyday favourite</div><h3 style="margin:8px 0;font:500 25px Georgia">Dal Tadka</h3><p style="font-size:12px;color:#70665b">A comforting yellow lentil preparation finished with tadka.</p>
+    <label style="font-size:11px;font-weight:800">PORTION</label><select class="portion-select" aria-label="Dal Tadka portion" style="display:block;width:100%;margin:7px 0 12px;padding:11px;border:1px solid #d8cbbb;border-radius:7px;background:#fffaf2;color:#211b16"><option value="250">250 g · ₹85</option><option value="500">500 g · ₹150</option><option value="1000">1 kg · ₹280</option></select>
+    <button class="add-demo" data-dish="Dal Tadka" style="width:100%;padding:12px;border:0;border-radius:7px;background:#ed762d;font-weight:900;color:#21160e">Add to bag</button>
+   </article>
+   <article class="demo-dish" data-name="Kadhi Pakora" style="padding:16px;border:1px solid #d8cbbb;border-radius:10px;background:#fffaf2">
+    <div style="font:italic 22px Georgia;color:#a15d38">04 / Homestyle favourite</div><h3 style="margin:8px 0;font:500 25px Georgia">Kadhi Pakora</h3><p style="font-size:12px;color:#70665b">Yoghurt-based kadhi with pakoras, prepared in a homestyle style.</p>
+    <label style="font-size:11px;font-weight:800">PORTION</label><select class="portion-select" aria-label="Kadhi Pakora portion" style="display:block;width:100%;margin:7px 0 12px;padding:11px;border:1px solid #d8cbbb;border-radius:7px;background:#fffaf2;color:#211b16"><option value="250">250 g · ₹95</option><option value="500">500 g · ₹170</option><option value="1000">1 kg · ₹320</option></select>
+    <button class="add-demo" data-dish="Kadhi Pakora" style="width:100%;padding:12px;border:0;border-radius:7px;background:#ed762d;font-weight:900;color:#21160e">Add to bag</button>
+   </article>
+   <article class="demo-dish" data-name="Suji Halwa" style="padding:16px;border:1px solid #d8cbbb;border-radius:10px;background:#fffaf2">
+    <div style="font:italic 22px Georgia;color:#a15d38">05 / Sweet finish</div><h3 style="margin:8px 0;font:500 25px Georgia">Suji Halwa</h3><p style="font-size:12px;color:#70665b">Made with desi ghee for a warm, traditional sweet finish.</p>
+    <label style="font-size:11px;font-weight:800">PORTION</label><select class="portion-select" aria-label="Suji Halwa portion" style="display:block;width:100%;margin:7px 0 12px;padding:11px;border:1px solid #d8cbbb;border-radius:7px;background:#fffaf2;color:#211b16"><option value="250">250 g · ₹110</option><option value="500">500 g · ₹205</option><option value="1000">1 kg · ₹390</option></select>
+    <button class="add-demo" data-dish="Suji Halwa" style="width:100%;padding:12px;border:0;border-radius:7px;background:#ed762d;font-weight:900;color:#21160e">Add to bag</button>
+   </article>
+  </div>
+ </div>
+</section>
+</main>
+<footer class="site-footer"><strong>KHANA IN KILO</strong>&nbsp; · &nbsp;GOOD FOOD. GOOD MOOD.&nbsp; · &nbsp;TAKEAWAY & HOME DELIVERY</footer>
+
+<!-- Navigation drawer -->
+<div class="overlay" id="navOverlay" aria-hidden="true">
+ <aside class="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="drawer-head"><div class="drawer-brand">KHANA IN KILO<small>GOOD FOOD. GOOD MOOD.</small></div><button class="drawer-close" id="menuClose" aria-label="Close menu">×</button></div>
+  <nav><a href="#top" data-close-nav>Home</a><a href="#menu-preview" data-close-nav>Menu preview</a><a href="#orderTitle" data-close-nav>Order options</a></nav>
+  <p class="drawer-note">Freshly prepared North Indian favourites.<br>Takeaway and home delivery only.</p>
+ </aside>
+</div>
+
+<!-- How to order dialog -->
+<div class="dialog" id="howDialog" role="dialog" aria-modal="true" aria-labelledby="howTitle">
+ <div class="dialog-card"><div class="dialog-head"><h3 id="howTitle">How to order</h3><button class="modal-close" data-close-dialog="howDialog" aria-label="Close">×</button></div>
+ <p>1. Explore the menu and choose your favourite dishes.</p><p>2. Select a portion — 250 g, 500 g or 1 kg.</p><p>3. Add items to your bag, then choose home delivery or takeaway.</p><p>This homepage reference demonstrates the customer journey. Live menu items, cart checkout, payments and order submission will be connected during the next development stages.</p>
+ <a class="dialog-action" href="#menu-preview" data-close-dialog="howDialog">Explore the menu</a></div>
+</div>
+
+<!-- Search dialog -->
+<div class="dialog" id="searchDialog" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+ <div class="dialog-card"><div class="dialog-head"><h3 id="searchTitle">Search Khana In Kilo</h3><button class="modal-close" data-close-dialog="searchDialog" aria-label="Close">×</button></div>
+ <p>Type a dish name to filter the sample menu below.</p><input class="search-field" id="searchInput" type="search" placeholder="Search dishes (e.g. Rajma, Chole)" aria-label="Search dishes"><a class="dialog-action" href="#menu-preview" data-close-dialog="searchDialog">Browse menu</a></div>
+</div>
+
+<!-- Bag dialog -->
+<div class="dialog" id="bagDialog" role="dialog" aria-modal="true" aria-labelledby="bagTitle">
+ <div class="dialog-card"><div class="dialog-head"><h3 id="bagTitle">Your bag</h3><button class="modal-close" data-close-dialog="bagDialog" aria-label="Close">×</button></div>
+ <div id="bagItems" style="margin-top:12px"></div><div id="bagTotal" style="margin-top:14px;font-weight:900"></div>
+ <button class="dialog-action" id="checkoutOpen" style="width:100%;border:0">Continue to demo checkout</button><a class="dialog-action" href="#menu-preview" data-close-dialog="bagDialog" style="background:transparent;border:1px solid #cbb9a5">Continue browsing</a></div>
+</div>
+
+<div class="dialog" id="checkoutDialog" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+ <div class="dialog-card"><div class="dialog-head"><h3 id="checkoutTitle">Demo checkout</h3><button class="modal-close" data-close-dialog="checkoutDialog" aria-label="Close">×</button></div>
+ <p>This is a local preview only. It will not send an order to the restaurant.</p>
+ <form id="demoCheckout" style="display:grid;gap:10px">
+  <input class="search-field" name="customer" required placeholder="Your name" aria-label="Your name">
+  <input class="search-field" name="phone" required inputmode="tel" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" aria-label="Mobile number">
+  <div id="checkoutAddress"><textarea name="address" rows="3" class="search-field" style="height:auto;padding-top:12px" placeholder="Delivery address" aria-label="Delivery address"></textarea></div>
+  <button class="dialog-action" type="submit" style="border:0">Place demo order</button>
+ </form></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+ const $ = id => document.getElementById(id);
+ let currentMode='delivery', cart=[], toastTimer;
+ const prices={
+  'Rajma':{'250':95,'500':170,'1000':320},
+  'Chole':{'250':95,'500':170,'1000':320},
+  'Dal Tadka':{'250':85,'500':150,'1000':280},
+  'Kadhi Pakora':{'250':95,'500':170,'1000':320},
+  'Suji Halwa':{'250':110,'500':205,'1000':390}
+ };
+ const money=n=>'₹'+n.toLocaleString('en-IN');
+ function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2900);}
+ function openDialog(id){$(id).classList.add('open');document.body.style.overflow='hidden';}
+ function closeDialog(id){$(id).classList.remove('open');if(!document.querySelector('.dialog.open')&&!$('navOverlay').classList.contains('open'))document.body.style.overflow='';}
+ $('menuOpen').addEventListener('click',()=>{$('navOverlay').classList.add('open');$('navOverlay').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';});
+ function closeNav(){$('navOverlay').classList.remove('open');$('navOverlay').setAttribute('aria-hidden','true');if(!document.querySelector('.dialog.open'))document.body.style.overflow='';}
+ $('menuClose').addEventListener('click',closeNav);
+ $('navOverlay').addEventListener('click',e=>{if(e.target===$('navOverlay'))closeNav();});
+ document.querySelectorAll('[data-close-nav]').forEach(a=>a.addEventListener('click',closeNav));
+ $('howOpen').addEventListener('click',()=>openDialog('howDialog'));
+ $('searchOpen').addEventListener('click',()=>{openDialog('searchDialog');setTimeout(()=>$('searchInput').focus(),100);});
+ $('bagOpen').addEventListener('click',()=>{renderCart();openDialog('bagDialog');});
+ document.querySelectorAll('[data-close-dialog]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();const id=el.getAttribute('data-close-dialog');closeDialog(id);if(el.tagName==='A')location.hash=el.getAttribute('href');}));
+ document.querySelectorAll('.dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)closeDialog(d.id);}));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeNav();document.querySelectorAll('.dialog.open').forEach(d=>closeDialog(d.id));}});
+ function setMode(mode){currentMode=mode;$('deliveryMode').classList.toggle('active',mode==='delivery');$('takeawayMode').classList.toggle('active',mode==='takeaway');$('deliveryMode').setAttribute('aria-pressed',String(mode==='delivery'));$('takeawayMode').setAttribute('aria-pressed',String(mode==='takeaway'));$('pinRow').hidden=mode!=='delivery';$('pinHint').textContent=mode==='delivery'?'Enter your PIN code to check delivery availability. This preview validates the format only.':'Takeaway selected. Collect your order from the Khana In Kilo outlet in Raj Nagar Extension.';toast(mode==='delivery'?'Home delivery selected.':'Takeaway selected.');}
+ $('deliveryMode').addEventListener('click',()=>setMode('delivery'));$('takeawayMode').addEventListener('click',()=>setMode('takeaway'));
+ $('pinCheck').addEventListener('click',()=>{const v=$('pinInput').value.trim();if(!/^[1-9][0-9]{5}$/.test(v)){toast('Please enter a valid 6-digit PIN code.');$('pinInput').focus();return;}toast('PIN format is valid. Actual delivery coverage is not connected in this preview.');});
+ $('pinInput').addEventListener('input',e=>e.target.value=e.target.value.replace(/\D/g,'').slice(0,6));
+ function renderCart(){
+  const count=cart.reduce((s,i)=>s+i.qty,0),total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  $('bagCount').textContent=count;$('bagItems').innerHTML='';
+  if(!cart.length){$('bagItems').textContent='Your bag is empty. Add a dish from the menu to get started.';$('bagTotal').textContent='';$('checkoutOpen').disabled=true;$('checkoutOpen').style.opacity='.5';return;}
+  $('checkoutOpen').disabled=false;$('checkoutOpen').style.opacity='1';
+  cart.forEach((item,index)=>{const row=document.createElement('div');row.style.cssText='display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid #ded2c4;font-size:12px';row.innerHTML=`<div><strong>${item.name}</strong><div style="color:#766b60;margin-top:4px">${item.portion} · ${money(item.price)} each</div><div style="display:flex;align-items:center;gap:10px;margin-top:8px"><button data-dec="${index}" aria-label="Decrease quantity">−</button><b>${item.qty}</b><button data-inc="${index}" aria-label="Increase quantity">+</button><button data-remove="${index}" style="margin-left:8px;color:#9b4828">Remove</button></div></div><strong>${money(item.price*item.qty)}</strong>`;$('bagItems').appendChild(row);});
+  $('bagTotal').textContent='Subtotal: '+money(total);
+  $('bagItems').querySelectorAll('[data-inc]').forEach(b=>b.onclick=()=>{cart[+b.dataset.inc].qty++;renderCart();});
+  $('bagItems').querySelectorAll('[data-dec]').forEach(b=>b.onclick=()=>{const i=+b.dataset.dec;cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1);renderCart();});
+  $('bagItems').querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.remove,1);renderCart();});
+ }
+ document.querySelectorAll('.add-demo').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.demo-dish'),portion=card.querySelector('select').value,name=btn.dataset.dish,price=prices[name][portion],label=portion==='1000'?'1 kg':portion+' g';const found=cart.find(i=>i.name===name&&i.portion===label);if(found)found.qty++;else cart.push({name,portion:label,price,qty:1});renderCart();closeNav();openDialog('bagDialog');toast(name+' added to your bag.');}));
+ $('checkoutOpen').addEventListener('click',()=>{if(!cart.length)return;closeDialog('bagDialog');$('checkoutAddress').hidden=currentMode!=='delivery';openDialog('checkoutDialog');});
+ $('demoCheckout').addEventListener('submit',e=>{e.preventDefault();if(!cart.length){toast('Your bag is empty.');return;}const data=new FormData(e.target);const order={mode:currentMode,customer:data.get('customer'),phone:data.get('phone'),items:cart,total:cart.reduce((s,i)=>s+i.price*i.qty,0)};if(currentMode==='delivery'&&!String(data.get('address')||'').trim()){toast('Please enter your delivery address.');return;}closeDialog('checkoutDialog');alert('Demo order summary\\n\\nCustomer: '+order.customer+'\\nOrder type: '+order.mode+'\\nItems: '+order.items.reduce((s,i)=>s+i.qty,0)+'\\nSubtotal: '+money(order.total)+'\\n\\nNo order was sent. Connect a backend to receive real orders.');cart=[];renderCart();e.target.reset();});
+ $('searchInput').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();let shown=0;document.querySelectorAll('.demo-dish').forEach(card=>{const match=!q||card.dataset.name.toLowerCase().includes(q);card.hidden=!match;if(match)shown++;});let empty=$('searchEmpty');if(!empty){empty=document.createElement('p');empty.id='searchEmpty';empty.style.cssText='margin-top:12px;color:#766b60;font-size:12px';$('menu-preview').querySelector('.menu-inner').appendChild(empty);}empty.textContent=shown?'': 'No matching dishes found in this sample menu.';empty.hidden=shown>0;});
+ $('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter'){closeDialog('searchDialog');location.hash='#menu-preview';}});
+ renderCart();
+})();
+</script>
+</body>
+</html>
